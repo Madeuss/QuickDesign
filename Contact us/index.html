@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<form class="right" name="form">
+				<h2>Contact Us</h2>
+				<input type="text" class="field" name="name" placeholder="Your Name" required>
+				<input type="text" class="field" name="email" placeholder="Your Email" required>
+				<input type="text" class="field" name="phone" placeholder="Phone" required>
+				<textarea class="field" name="" placeholder="Message" required></textarea>
+				<label id="ask">Deseja Inserir Algum Documento?</label>
+				<div class="file">
+					<label for="any-file" class="label-file">Select File</label>
+					<input type="file" name="any-file" id="any-file">
+				</div>	
+				<button class="btn" type="submit" onclick="ValidateEmail(document.form.email)">Send</button>
+			</form>
+		</div>
+	</div>
+	<script src="js/validation.js"></script>
+</body>
+</html>
