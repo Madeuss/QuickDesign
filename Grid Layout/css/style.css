@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+body{
+    justify-content: center;
+    align-self: center;
+    min-height: 100%;
+    background-color: #222;
+}
+h1{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    color: ivory;
+}
+.container{
+    display: grid;
+    position: relative;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: minmax(100px, auto);
+    margin: 20px;
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    box-shadow: -2px 2px 6px 2px #8d8d8d;
+}
+.container .box{
+    position: relative;
+    background: #333;
+    display: grid;
+    font-size: 20px;
+    transition: .2s;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+}
+.container .box:hover{
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+}
+
+/*IMAGES*/
+.container .box .front img{
+    position: relative;
+    margin: 10px;
+    max-width: 200px;
+}
+.container .box .back img{
+    max-width: 150px;
+    position: relative;
+    margin: 10px auto;
+}
+.container .box #back-juve img{
+    max-width: 150px;
+    margin: 0 auto;
+}
+.container .box #back-barca img{
+    max-width: 250px;
+    margin: -30px auto;
+}
+.container .box #back-bvb img{
+    max-width: 100%;
+    margin: 0 auto 10px;
+}
+
+/*----------------------------------*/
+
+/*Sizing each box*/
+.container .box:nth-child(1){
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.container .box:nth-child(2){
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.container .box:nth-child(3){
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.container .box:nth-child(4){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.container .box:nth-child(5){
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.container .box:nth-child(6){
+    grid-column: span 3;
+    grid-row: span 1;
+}
+.container .box:nth-child(7){
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.container .box:nth-child(8){
+    grid-column: span 2;
+    grid-row: span 1;
+}
+/*----------------------------------*/
+
+.front{
+    transform: rotateY(0deg);
+    transition: .5s all ease-in-out;
+}
+.back{
+    transition: .5s all ease-in-out; 
+    overflow: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    place-items: center;
+    transform: perspective(600px) rotateY(180deg);
+    background: #911d44;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 14px;
+}
+.box:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+    transition: .5s;
+}
+.box:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+    transition: .5s;
+}
+.container .box-calendar:hover{
+    background-color: #911d44;
+}
+
+/*Media queries*/
+@media (max-width: 1329px){
+    .container .box:nth-child(8){
+        grid-column: span 7;
+        grid-row: span 1;
+    }
+}
+@media (max-width: 1178px){
+    .container{
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        grid-template-rows: minmax(auto, auto);
+    }
+    .container .box{
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
